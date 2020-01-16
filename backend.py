@@ -6,7 +6,7 @@ import db
 
 app = Flask(__name__)
 
-# Hello People
+
 def genereer_datums():
     dates = []
     for daydelta in range(0, 5):
@@ -29,9 +29,11 @@ def genereer_tijden():
 def afspraak_invoegen():
     dag = request.form.get('dag')
     tijd = request.form.get('tijd')
-    email = 'test' # TODO
+    tijdstip = dag + "  " + tijd
+    email = 'test' # TODO in frontend
+    naam = 'test' # TODO in frontend
     print(dag, tijd)
-    db.execute_sql("INSERT INTO afspraak(email, dag, tijd) VALUES ('{}','{}', '{}')".format(email, dag, tijd))
+    db.execute_sql("INSERT INTO afspraak(naam, email, tijdstip) VALUES ('{}','{}','{}')".format(naam,email, tijdstip))
     return redirect(url_for('success'))
 
 
