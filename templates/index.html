@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>De kapper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body id="turk" class="turk">
+    <header id="home">
+        <div class="menu">
+        <span class="bar"></span>
+        </div>
+
+        <nav class="nav">
+            <div class="overlay">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#afspraak">Afspraak maken</a></li>
+                    <li><a href="#modellen">Onze modellen</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main-text">
+            <h1>Welkom</h1>
+            <h2>De kapper</h2>
+            <h2><a id="diego" class="diego" href="#" btn main-btn  >Explore</a></h2>
+        </div>
+    </header>
+    <section class="afspraak-maken" id="afspraak">
+        <div class="container">
+            <h1 class="custom-font">Beschikbare data</h1>
+            <h2 class="custom-font">Afspraak maken</h2>
+            <p>Hier kunt u online een afspraak maken</p>
+            <h2><a href="{{ url_for('afspraak') }}"> Klik hier</a></h2>
+            <div class="store"></div>
+        </div>
+    </section>
+    
+    <section class="fresh-haircut between-sec">
+        <div class="container">
+            <h1 class="custom-font">Fresh haircut</h1>
+            <h2 class="custom-font-secondary between-sec-color">Wij zijn elke dag bezig om de nieuwste modellen te vinden.</h2>
+            <p>Wanneer u geen idee heeft welk model u zou willen, kunnen onze kappers u helpen met wat het beste bij u past.</p>
+        </div>
+    </section>
+
+    <section class="onze-modellen" id="modellen">
+            <div class="container">
+                <h1 class="custom-font">Onze modellen</h1>
+                <h2 class="custom-font">Modellen</h2>
+                <p>Hier kunt u online modellen kiezen</p>
+                <div class="image-group">
+                    <img src="{{ url_for('static', filename='images/kapsel1.jpg') }}" alt="">
+                    <img src="{{ url_for('static', filename='images/kapsel2.jpg') }}" alt="">
+                    <img src="{{ url_for('static', filename='images/kapsel3.jpg') }}" alt="">
+                    <img src="{{ url_for('static', filename='images/kapsel4.jpg') }}" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="Best-in-town between-sec">
+                <div class="container">
+                    <h1 class="custom-font">Best haicut</h1>
+                    <h2 class="custom-font-secondary between-sec-color">Kwalitatief geknipt worden</h2>
+                    <p>Onze kappers zijn hebben allemaal een kappers diploma en jaren ervaring.</p>
+                </div>
+            </section>
+
+            <section class="Contact-us" id="contact">
+                    <div class="container">
+                        <h1 class="custom-font">Contact ons</h1>
+                        <h2 class="custom-font">Wij zullen u zo spoedig mogelijk bereiken</h2>
+                        <p>Wij zijn 6 dagen per week van 10:00-18:00 te bereiken op 075-443424324</p>
+                    </p>
+                   <form action="">
+                     <input type="text" class="input" placeholder="Volledige naam" name="naam"> required>
+                     <input type="text" class="input" placeholder="Email" name="email"> required>
+                     <textarea name="Bericht" class="text-area" placeholder="Waar kunnen wij u mee helpen?" required></textarea>
+                  <input type="submit" class="input btn btn-submit">
+                    </form>
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="locations">
+                        <h3>Locatie</h3>
+                        <div class="location">
+                            <h4>Waterlooplein 69 <br>
+                                Amsterdam, NH - 1060BF
+                            </h4>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="Openings tijden">
+                            <h4>Openings tijden</h4>
+                            <div class="Dagen">
+                                <h4>Maandag - Zaterdag <br>
+                                    10:00 - 18:00
+                                </h4>
+                            </div>
+                    </div>
+                </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+
+</body>
+</html>
+
