@@ -6,7 +6,7 @@ import db
 
 app = Flask(__name__)
 
-
+# Hello People
 def genereer_datums():
     dates = []
     for daydelta in range(0, 5):
