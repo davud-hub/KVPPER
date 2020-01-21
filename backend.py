@@ -29,15 +29,15 @@ def genereer_tijden():
 def afspraak_invoegen():
     dag = request.form.get('dag')
     tijd = request.form.get('tijd')
-    tijdstip = dag + "  " + tijd
-    email = 'test' # TODO in frontend
-    naam = 'test' # TODO in frontend
-    print(dag, tijd)
-    db.execute_sql("INSERT INTO afspraak(naam, email, tijdstip) VALUES ('{}','{}','{}')".format(naam,email, tijdstip))
+    datetimeobj = datetime.strptime(f'{dag} {tijd}', '%x %H:%M')  # strftime.org, to save python dt object in db
+    email = request.form.get('email')
+    naam = request.form.get('naam')
+    print(f"Afspraak gemaakt: tijdstip: {datetimeobj} email: {email} naam: {naam}")
+    db.execute_sql("INSERT INTO afspraak(naam, email, tijdstip) VALUES ('{}','{}','{}')".format(naam, email, datetimeobj))
     return redirect(url_for('success'))
 
 
-app.route('/afspraken', methods=['GET'])
+@app.route('/afspraken', methods=['GET'])
 def vraag_afspraken_op():
     dbafspraken = db.execute_sql('SELECT * FROM afspraak ORDER BY tijdstip')
 
